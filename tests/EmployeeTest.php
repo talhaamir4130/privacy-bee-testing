@@ -28,6 +28,7 @@ class EmployeeTest extends WebTestCase
         );
     
         $this->assertEquals(Response::HTTP_OK, $client->getResponse()->getStatusCode());
+        $this->assertEquals(json_encode($updateData), $client->getResponse()->getContent());
     }
 
     public function testUpdateEmployeeWrongInputs(): void
